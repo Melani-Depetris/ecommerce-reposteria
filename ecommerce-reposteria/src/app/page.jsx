@@ -1,18 +1,11 @@
-"use client"
+"use client";
 import React from "react";
+import Slide from "../components/landing/slide";
 
 const page = () => {
   return (
     <div>
-      {/* ------START CARROUSEL------ */}
-      {/* <h1>Welcome to My Website</h1>
-      <Carousel>
-        {images.map((image, index) => (
-          <ImageCard key={index} src={image.src} alt={image.alt} />
-        ))}
-      </Carousel> */}
-      {/* ------END CARROUSEL------ */}
-
+      <Slide />
     </div>
   );
 };
