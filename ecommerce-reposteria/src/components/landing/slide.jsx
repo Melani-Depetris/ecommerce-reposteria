@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useState } from "react";
 
 // svg icons
@@ -38,20 +38,22 @@ const Slide = () => {
   }
 
   return (
-    <div className="max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative group">
+    <div className="max-w-[1400px] h-[480px]  w-full m-auto relative group">
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
-        className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
+        className="w-full h-full bg-center bg-cover duration-500"
       ></div>
       {/* Left Arrow */}
-      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-        <MaterialSymbolsArrowBackIosRounded onClick={prevSlide} size={30} />
+      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer" onClick={prevSlide}>
+        <MaterialSymbolsArrowBackIosRounded size={30} />
       </div>
       {/* Right Arrow */}
-      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-        <MaterialSymbolsArrowForwardIosRounded onClick={nextSlide} size={30} />
+      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer" onClick={nextSlide}>
+        <MaterialSymbolsArrowForwardIosRounded size={30} />
       </div>
-      <div className="flex top-4 justify-center py-2">
+      <div className="hidden group-hover:flex absolute bottom-2 justify-center w-full">
+        <div className="flex space-x-2 rounded-full px-2  bg-black/20">
+
         {slides.map((slide, slideIndex) => (
           <div
             key={slideIndex}
@@ -60,10 +62,11 @@ const Slide = () => {
           >
             <PhDotOutlineFill
               size={30}
-              color={currentIndex === slideIndex ? "#F3B3CB" : "#F3B3CR"}
-            />
+              color={currentIndex === slideIndex ? "#F3B3CB" : "#F3B3C0"}
+              />
           </div>
         ))}
+        </div>
       </div>
     </div>
   );

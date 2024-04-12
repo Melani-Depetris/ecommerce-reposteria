@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
     
       <body className={inter.className}>
-        <header className="bg-secondary">
+        <header className="relative z-50 bg-secondary">
           <Navbar />
         </header>
         {children}

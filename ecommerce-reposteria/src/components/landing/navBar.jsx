@@ -6,21 +6,21 @@ import { useState } from "react";
 import { TablerMenu2 } from "../svg/tabler-menu";
 import { RadixIconsCross2 } from "../svg/cancel"
 
-export default function MyNavbar() {
+const MyNavbar= () => {
   let [showMenu, setShowMenu] = useState(false);
  
 
   return (
-    <nav className="flex justify-between items-center w-[92%] mx-auto">
+    <nav className="flex relative z-100 justify-between items-center w-[100%] px-4 mx-auto bg-secondary">
       {/* LOGO */}
       <div>
-        <p className="text-2xl text-pink-300 py-4">Logo</p>
+        <p className="text-2xl text-tertiary py-4">Logo</p>
       </div>
 
       <div
-        className={`md:static absolute md:min-h-fit min-h-[60vh] left-0 ${
-          showMenu ? "top-[9%]" : "top-[-100%]"
-        } md:w-auto w-full flex items-center px-5 bg-violet-600 transition-all duration-500 ease-in-out z-[-10] md:z-0 md:transparent`}
+        className={`md:static absolute md:min-h-fit left-0 ${
+          showMenu ? "top-[100%]" : "top-[-300%]"
+        } md:w-auto w-full flex items-center px-5 bg-violet-600 transition-all duration-500 ease-in-out z-[-10] md:z-0 md:bg-transparent py-4`}
       >
         <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
           <li>
@@ -59,3 +59,4 @@ export default function MyNavbar() {
     </nav>
   );
 }
+export default MyNavbar;
